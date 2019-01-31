@@ -12,6 +12,11 @@ Route::group([
 
     $router->get('/', 'HomeController@index');
     $router->get('tools', 'ToolsController@index');
+    $router->get('tools/create', 'ToolsController@create');
+    $router->post('tools', 'ToolsController@store');
+
+    $router->get('tools/{id}/edit', 'ToolsController@edit');
+    $router->put('tools/{id}', 'ToolsController@update');
 
     $router->get('categories', 'CategoriesController@index');
     $router->get('categories/create', 'CategoriesController@create');

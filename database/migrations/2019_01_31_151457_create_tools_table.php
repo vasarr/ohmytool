@@ -19,7 +19,7 @@ class CreateToolsTable extends Migration
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
             $table->string('title')->comment('标题');
             $table->string('url')->comment('url链接');
-            $table->string('icon')->comment('图标');
+            $table->string('icon')->nullable()->comment('图标');
             $table->text('description')->nullable()->comment('描述');
             $table->unsignedInteger('click_count')->default(0);
             $table->timestamps();

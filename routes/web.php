@@ -14,3 +14,4 @@
 
 
 Route::get('/', 'PageController@root')->name('root');
+Route::put('page/count', 'PageController@clickCount')->name('page.count');

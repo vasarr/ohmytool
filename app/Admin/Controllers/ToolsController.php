@@ -9,6 +9,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
+use App\Models\Category;
 
 class ToolsController extends Controller
 {
@@ -23,8 +24,7 @@ class ToolsController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header('Index')
-            ->description('description')
+            ->header('工具列表')
             ->body($this->grid());
     }
 
@@ -53,8 +53,7 @@ class ToolsController extends Controller
     public function edit($id, Content $content)
     {
         return $content
-            ->header('Edit')
-            ->description('description')
+            ->header('编辑工具')
             ->body($this->form()->edit($id));
     }
 
@@ -67,8 +66,7 @@ class ToolsController extends Controller
     public function create(Content $content)
     {
         return $content
-            ->header('Create')
-            ->description('description')
+            ->header('创建工具')
             ->body($this->form());
     }
 
@@ -80,17 +78,31 @@ class ToolsController extends Controller
     protected function grid()
     {
         $grid = new Grid(new Tool);
+        // 使用 with 来预加载商品类目数据，减少 SQL 查询
+        $grid->model()->with(['category']);
 
-        $grid->id('Id');
-        $grid->category_id('Category id');
-        $grid->title('Title');
-        $grid->url('Url');
-        $grid->icon('Icon');
-        $grid->description('Description');
-        $grid->click_count('Click count');
-        $grid->created_at('Created at');
-        $grid->updated_at('Updated at');
+        $grid->id('Id')->sortable();
+//        $grid->category_id('Category id');
+        $grid->title('名称');
+        $grid->column('category.name', '类目');
+        $grid->url('超链接');
+//        $grid->icon('Icon');
+//        $grid->description('Description');
+        $grid->click_count('点击量');
+//        $grid->created_at('Created at');
+//        $grid->updated_at('Updated at');
+        $grid->actions(function ($actions) {
+            $actions->disableView();
+            $actions->disableDelete();
+        });
+        $grid->tools(function ($tools) {
+            // 禁用批量删除按钮
+            $tools->batch(function ($batch) {
+                $batch->disableDelete();
+            });
+        });
 
+        return $grid;
         return $grid;
     }
 
@@ -126,12 +138,21 @@ class ToolsController extends Controller
     {
         $form = new Form(new Tool);
 
-        $form->number('category_id', 'Category id');
-        $form->text('title', 'Title');
-        $form->url('url', 'Url');
-        $form->text('icon', 'Icon');
-        $form->textarea('description', 'Description');
-        $form->number('click_count', 'Click count');
+//        $form->number('category_id', 'Category id');
+        $form->text('title', '名称');
+
+        // 添加一个类目字段，与之前类目管理类似，使用 Ajax 的方式来搜索添加
+        $form->select('category_id', '类目')->options(function ($id) {
+            $category = Category::find($id);
+            if ($category) {
+                return [$category->id => $category->full_name];
+            }
+        })->ajax('/'.config('admin.route.prefix').'/api/categories?is_directory=0');
+
+        $form->text('url', '超链接');
+//        $form->text('icon', '图标');
+        $form->textarea('description', '描述');
+        $form->number('click_count', '点击率');
 
         return $form;
     }
