@@ -44,7 +44,7 @@
         /*}*/
 
         .tools {
-            border: 1px solid gray;
+            border: 1px solid rgb(221,221,221);
             border-radius: 5px;
         }
 
