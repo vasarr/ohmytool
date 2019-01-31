@@ -21,6 +21,14 @@
                     <a class="list-group-item click" href="{{ $blog->url }}" target="__blank" data-id="{{ $blog->id }}">{{ $blog->title }}</a>
                 @endforeach
             </div>
+            <div class="list-group">
+                <a href="#" class="list-group-item active">
+                    开发手册
+                </a>
+                @foreach($manuals as $manual)
+                    <a class="list-group-item click" href="{{ $manual->url }}" target="__blank" data-id="{{ $manual->id }}">{{ $manual->title }}</a>
+                @endforeach
+            </div>
         </div>
         <!-- 右边 -->
         <div class="col-md-8">
