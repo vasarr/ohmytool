@@ -20,7 +20,7 @@ class CategoryController extends Controller
 
         $cate_blog_id = 5;
         $blogs = Tool::query()->where('category_id', $cate_blog_id)->orderByDesc('click_count')->limit(10)->get();
-        
+
         return view('category.index', compact('categoryName', 'tools', 'blogs'));
     }
 }

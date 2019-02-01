@@ -28,7 +28,7 @@
         <div class="col-md-8">
             @foreach($tools as $tool)
             <div class="list-group">
-                <a href="#" class="list-group-item">
+                <a href="{{ $tool->url }}" class="list-group-item click" target="_blank" data-id="{{ $tool->id }}">
                     <h5 class="list-group-item-heading">{{ $tool->title }}</h5>
                     <p class="list-group-item-text" style="font-size: 12px; padding: 10px 0 10px 0;">{{ $tool->description }}</p>
                 </a>
@@ -40,7 +40,7 @@
         <!-- 右边 -->
         <div class="col-md-4">
             <div class="list-group">
-                <a href="{{ route('category.index', 5) }}" class="list-group-item active list-group-item-success">
+                <a href="{{ route('category.index', 5) }}" class="list-group-item list-group-item-info">
                     名博客
                 </a>
                 @foreach($blogs as $blog)
@@ -57,10 +57,9 @@
     $(function () {
         $('.click').click(function () {
             var id = $(this).attr('data-id');
-
             $.ajax({
                 type: "PUT",
-                url: "page/count",
+                url: "{{ route('page.count') }}",
                 data: "id=" + id,
                 success: function(){}
             });
