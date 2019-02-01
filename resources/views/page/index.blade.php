@@ -6,7 +6,7 @@
         <!-- 左边 -->
         <div class="col-md-4">
             <div class="list-group">
-                <a href="#" class="list-group-item active">
+                <a href="{{ route('category.index', 2) }}" class="list-group-item active">
                     API文档
                 </a>
                 @foreach($apiDocs as $doc)
@@ -14,7 +14,7 @@
                 @endforeach
             </div>
             <div class="list-group">
-                <a href="#" class="list-group-item active">
+                <a href="{{ route('category.index', 5) }}" class="list-group-item active">
                     名博客
                 </a>
                 @foreach($blogs as $blog)
@@ -22,7 +22,7 @@
                 @endforeach
             </div>
             <div class="list-group">
-                <a href="#" class="list-group-item active">
+                <a href="{{ route('category.index', 11) }}" class="list-group-item active">
                     开发手册
                 </a>
                 @foreach($manuals as $manual)
@@ -33,7 +33,7 @@
         <!-- 右边 -->
         <div class="col-md-8">
             <div class="list-group tools">
-                <a href="#" class="list-group-item active">
+                <a href="{{ route('category.index', 8) }}" class="list-group-item active">
                     常用工具
                 </a>
                 <ul>
@@ -43,7 +43,7 @@
                 </ul>
             </div>
             <div class="list-group tools">
-                <a href="#" class="list-group-item active">
+                <a href="{{ route('category.index', 6) }}" class="list-group-item active">
                     学习英语
                 </a>
                 <ul>
@@ -53,7 +53,7 @@
                 </ul>
             </div>
             <div class="list-group tools">
-                <a href="#" class="list-group-item active">
+                <a href="{{ route('category.index', 9) }}" class="list-group-item active">
                     软件推荐
                 </a>
                 <ul>
