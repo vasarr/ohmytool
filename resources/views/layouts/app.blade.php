@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <meta name="keywords" content="blog,document,英语,在线工具,程序员,工具,开发人员工具,小工具,API查询,文档,推荐软件,下载">
-    <meta name="description" content="快速查阅,快乐工作">
+    <meta name="keywords" content="blog,document,英语,在线工具,程序员,工具,开发人员工具,小工具,API查询,文档,推荐软件,下载,软件设计">
+    <meta name="description" content="tool,快速查阅,快乐工作">
     <meta name="author" content="ohmytool">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -36,6 +36,13 @@
     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6010623452037264",
+            enable_page_level_ads: true
+        });
+    </script>
 
     <style type="text/css">
         /*.content {*/
@@ -81,13 +88,6 @@
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
-    });
-</script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-6010623452037264",
-        enable_page_level_ads: true
     });
 </script>
 <script>
