@@ -44,6 +44,16 @@
             </div>
             <div class="list-group tools">
                 <a href="{{ route('category.index', 6) }}" class="list-group-item active list-group-item-info">
+                    推荐文章
+                </a>
+                <ul>
+                    @foreach($articles as $article)
+                        <li><a href="{{ $article->url }}" target="_blank" class="click" data-id="{{ $article->id }}">{{ $article->title }}</a></li>
+                    @endforeach
+                </ul>
+            </div>
+            <div class="list-group tools">
+                <a href="{{ route('category.index', 6) }}" class="list-group-item active list-group-item-info">
                     学习英语
                 </a>
                 <ul>
