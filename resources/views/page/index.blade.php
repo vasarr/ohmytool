@@ -43,7 +43,7 @@
                 </ul>
             </div>
             <div class="list-group tools">
-                <a href="{{ route('category.index', 6) }}" class="list-group-item active list-group-item-info">
+                <a href="{{ route('category.index', 12) }}" class="list-group-item active list-group-item-info">
                     推荐文章
                 </a>
                 <ul>
