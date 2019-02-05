@@ -3,74 +3,82 @@
 
 @section('content')
     <div class="row">
-        <!-- 左边 -->
-        <div class="col-md-4">
-            <div class="list-group">
-                <a href="{{ route('category.index', 2) }}" class="list-group-item active list-group-item-info">
-                    API文档
-                </a>
-                @foreach($apiDocs as $doc)
-                    <a class="list-group-item click" href="{{ $doc->url }}" target="_blank" data-id="{{ $doc->id }}">{{ $doc->title }}</a>
-                @endforeach
-            </div>
-            <div class="list-group">
-                <a href="{{ route('category.index', 5) }}" class="list-group-item active list-group-item-info">
-                    名博客
-                </a>
-                @foreach($blogs as $blog)
-                    <a class="list-group-item click" href="{{ $blog->url }}" target="_blank" data-id="{{ $blog->id }}">{{ $blog->title }}</a>
-                @endforeach
-            </div>
-            <div class="list-group">
-                <a href="{{ route('category.index', 11) }}" class="list-group-item active list-group-item-info">
-                    开发手册
-                </a>
-                @foreach($manuals as $manual)
-                    <a class="list-group-item click" href="{{ $manual->url }}" target="_blank" data-id="{{ $manual->id }}">{{ $manual->title }}</a>
-                @endforeach
+        <div class="col-md-8 left">
+            <div class="content">
+                <div class="docapi"><a href="{{ route('category.index', 2) }}">在线文档</a></div>
+                <div class="frontslist">
+                    @foreach($apiDocs as $doc)
+                    <div class="fronts t-hover-shadow">
+                        <div class="title"><a href="{{ $doc->url }}" target="_blank" class="atitle click" data-id="{{ $doc->id }}">{{ $doc->title }}</a></div>
+                        <div class="detail">
+                            <p>{{ $doc->description }}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="docapi"><a href="{{ route('category.index', 8) }}">常用工具</a></div>
+                <div class="frontslist">
+                    @foreach($tools as $value)
+                    <div class="fronts-tools t-hover-shadow">
+                        <div class="title"><a href="{{ $value->url }}" target="_blank" class="atitle click">{{ $value->title }}</a></div>
+                        <div class="detail">
+                            <p>{{ $value->description }}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="docapi"><a href="{{ route('category.index', 12) }}" target="_blank">推荐文章</a></div>
+                <div class="frontslist">
+                    @foreach($articles as $value)
+                    <div class="fronts-tools t-hover-shadow">
+                        <div class="title"><a href="{{ $value->url }}" target="_blank" class="atitle click">{{ $value->title }}</a></div>
+                        <div class="detail">
+                            <p>{{ $value->description }}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="docapi"><a href="{{ route('category.index', 6) }}">学习英语</a></div>
+                <div class="frontslist">
+                    @foreach($englishs as $value)
+                    <div class="fronts-tools t-hover-shadow">
+                        <div class="title"><a href="{{ $value->url }}" target="_blank" class="atitle click">{{ $value->title }}</a></div>
+                        <div class="detail">
+                            <p>{{ $value->description }}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="docapi"><a href="{{ route('category.index', 9) }}">推荐软件</a></div>
+                <div class="frontslist">
+                    @foreach($softwares as $soft)
+                    <div class="fronts t-hover-shadow">
+                        <div class="title"><a href="{{ $soft->url }}" target="_blank" class="atitle click">{{ $soft->title }}</a></div>
+                        <div class="detail">
+                            <p>{{ $soft->description }}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
             </div>
         </div>
-        <!-- 右边 -->
-        <div class="col-md-8">
-            <div class="list-group tools">
-                <a href="{{ route('category.index', 8) }}" class="list-group-item active list-group-item-info">
-                    常用工具
-                </a>
-                <ul>
-                    @foreach($tools as $tool)
-                        <li><a href="{{ $tool->url }}" target="_blank" class="click" data-id="{{ $tool->id }}">{{ $tool->title }}</a></li>
+        <div class="col-md-4 right">
+            <div class="list">
+                <div class="header">
+                    <span class="glyphicon glyphicon-list" aria-hidden="true" style="margin-right: 10px;"></span><a href="{{ route('category.index', 5) }}"><span>推荐博客</span></a>
+                </div>
+                <div class="right-list">
+                    @foreach($blogs as $blog)
+                    <div class="no">0{{$loop->iteration}}</div>
+                    <div class="description">
+                        <div class="desc-title" style="margin-top: 10px; font-size: 18px; margin-bottom: 10px;">
+                            <a href="{{ $blog->url }}" target="_blank" style="" class="atitle click" data-id="{{ $blog->id }}">{{ $blog->title }}</a>
+                        </div>
+                        <p><small>{{ $blog->description }}</small></p>
+                    </div>
                     @endforeach
-                </ul>
-            </div>
-            <div class="list-group tools">
-                <a href="{{ route('category.index', 12) }}" class="list-group-item active list-group-item-info">
-                    推荐文章
-                </a>
-                <ul>
-                    @foreach($articles as $article)
-                        <li><a href="{{ $article->url }}" target="_blank" class="click" data-id="{{ $article->id }}">{{ $article->title }}</a></li>
-                    @endforeach
-                </ul>
-            </div>
-            <div class="list-group tools">
-                <a href="{{ route('category.index', 6) }}" class="list-group-item active list-group-item-info">
-                    学习英语
-                </a>
-                <ul>
-                    @foreach($englishs as $english)
-                        <li><a href="{{ $english->url }}" target="_blank" class="click" data-id="{{ $english->id }}">{{ $english->title }}</a></li>
-                    @endforeach
-                </ul>
-            </div>
-            <div class="list-group tools">
-                <a href="{{ route('category.index', 9) }}" class="list-group-item active list-group-item-info">
-                    软件推荐
-                </a>
-                <ul>
-                    @foreach($softwares as $software)
-                        <li><a href="{{ $software->url }}" target="_blank" class="click" data-id="{{ $software->id }}">{{ $software->title }}</a></li>
-                    @endforeach
-                </ul>
+
+                </div>
             </div>
         </div>
     </div>
@@ -81,7 +89,6 @@
     $(function () {
         $('.click').click(function () {
             var id = $(this).attr('data-id');
-
             $.ajax({
                 type: "PUT",
                 url: "{{ route('page.count') }}",
