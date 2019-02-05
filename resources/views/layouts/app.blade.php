@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="baidu-site-verification" content="PTBYra2im5" />
+    <meta name="google-site-verification" content="Hj4IWClcBj3wvzM2Ec5wrAA0ynJd91yiwhHwO9Pyqgk" />
     <meta name="description" content="Ohmytool 是一个分享资源、工具推荐的导航网站，是日常工作总结的实践，目的是让我们在需要的过程中超速获取。">
     <meta name="keywords" content="php,laravel,在线文档,英语,在线工具,程序员,工具,开发人员工具,小工具,API查询,文档,推荐软件,软件设计">
     <meta name="author" content="vasar">
