@@ -53,13 +53,27 @@
 
         .docapi {
             border-bottom: 1px solid #D9DEE0;
-            padding-bottom: 10px;
+            /*padding-bottom: 10px;*/
             margin-bottom: 10px;
         }
 
         .docapi a {
             color: #FA6462;
             font-size: 18px;
+        }
+
+        .list-header {
+            display: flex;
+            flex-wrap: row;
+        }
+
+        .category-name {
+            border-bottom: 1px solid #722777;
+            padding-bottom: 16px;
+        }
+
+        .category-name a:hover {
+            text-decoration: none;
         }
 
         .frontslist {
@@ -84,13 +98,13 @@
             /*width: 225px;*/
             flex: 220px;
             /*border: 1px solid green;*/
-            margin: 0 15px 5px 0;
+            margin: 0 15px 10px 0;
         }
 
         .fronts-tools {
             flex: 250px;
             /*border: 1px solid green;*/
-            margin: 0 15px 5px 0;
+            margin: 0 15px 10px 0;
         }
 
         .title {
