@@ -18,7 +18,7 @@ class PageController extends Controller
         $cate_manual_id = 11;
         $cate_article_id = 12;
 
-        $apiDocs = Tool::query()->where('category_id', $cate_api_doc_id)->orderByDesc('click_count')->limit(12)->get();
+        $apiDocs = Tool::query()->where('category_id', $cate_api_doc_id)->orderByDesc('click_count')->limit(15)->get();
         $manuals = Tool::query()->where('category_id', $cate_manual_id)->orderByDesc('click_count')->limit(10)->get();
         $blogs = Tool::query()->where('category_id', $cate_blog_id)->orderByDesc('click_count')->limit(9)->get();
         $tools = Tool::query()->where('category_id', $cate_tool_id)->orderByDesc('click_count')->limit(10)->get();
