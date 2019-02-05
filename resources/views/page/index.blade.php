@@ -9,7 +9,7 @@
                 <div class="frontslist">
                     @foreach($apiDocs as $doc)
                     <div class="fronts t-hover-shadow">
-                        <div class="title"><a href="{{ $doc->url }}" target="_blank" class="atitle click" data-id="{{ $doc->id }}">{{ $doc->title }}</a></div>
+                        <div class="title"><a href="{{ $doc->url }}" target="_blank" class="atitle click" data-id="{{ $doc->id }}"><h3>{{ $doc->title }}</h3></a></div>
                         <div class="detail">
                             <p>{{ $doc->description }}</p>
                         </div>
@@ -20,7 +20,7 @@
                 <div class="frontslist">
                     @foreach($tools as $value)
                     <div class="fronts-tools t-hover-shadow">
-                        <div class="title"><a href="{{ $value->url }}" target="_blank" class="atitle click" data-id="{{ $value->id }}">{{ $value->title }}</a></div>
+                        <div class="title"><a href="{{ $value->url }}" target="_blank" class="atitle click" data-id="{{ $value->id }}"><h3>{{ $value->title }}</h3></a></div>
                         <div class="detail">
                             <p>{{ $value->description }}</p>
                         </div>
@@ -31,7 +31,7 @@
                 <div class="frontslist">
                     @foreach($articles as $value)
                     <div class="fronts-tools t-hover-shadow">
-                        <div class="title"><a href="{{ $value->url }}" target="_blank" class="atitle click" data-id="{{ $value->id }}">{{ $value->title }}</a></div>
+                        <div class="title"><a href="{{ $value->url }}" target="_blank" class="atitle click" data-id="{{ $value->id }}"><h3>{{ $value->title }}</h3></a></div>
                         <div class="detail">
                             <p>{{ $value->description }}</p>
                         </div>
@@ -42,7 +42,7 @@
                 <div class="frontslist">
                     @foreach($englishs as $value)
                     <div class="fronts-tools t-hover-shadow">
-                        <div class="title"><a href="{{ $value->url }}" target="_blank" class="atitle click" data-id="{{ $value->id }}">{{ $value->title }}</a></div>
+                        <div class="title"><a href="{{ $value->url }}" target="_blank" class="atitle click" data-id="{{ $value->id }}"><h3>{{ $value->title }}</h3></a></div>
                         <div class="detail">
                             <p>{{ $value->description }}</p>
                         </div>
@@ -53,7 +53,7 @@
                 <div class="frontslist">
                     @foreach($softwares as $soft)
                     <div class="fronts t-hover-shadow">
-                        <div class="title"><a href="{{ $soft->url }}" target="_blank" class="atitle click" data-id="{{ $soft->id }}">{{ $soft->title }}</a></div>
+                        <div class="title"><a href="{{ $soft->url }}" target="_blank" class="atitle click" data-id="{{ $soft->id }}"><h3>{{ $soft->title }}</h3></a></div>
                         <div class="detail">
                             <p>{{ $soft->description }}</p>
                         </div>

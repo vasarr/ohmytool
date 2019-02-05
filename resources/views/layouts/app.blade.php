@@ -110,6 +110,12 @@
             text-decoration: none;
         }
 
+        .atitle h3 {
+            padding: 0px;
+            margin: 0px;
+            font-size: 16px;
+        }
+
         .detail {
             background-color: #F5F5FB;
             /*border: 1px solid white;*/
@@ -120,7 +126,7 @@
         .detail p {
             margin: 0px;
             padding: 10px;
-            font-size: 12px;
+            font-size: 13px;
             width: 200px;
             white-space: nowrap;
             overflow: hidden;
