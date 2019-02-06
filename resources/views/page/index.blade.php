@@ -111,7 +111,7 @@
                                 <a href="{{ $blog->url }}" target="_blank" style="" class="atitle click"
                                    data-id="{{ $blog->id }}">{{ $blog->title }}</a>
                             </div>
-                            <p>
+                            <p style="color: #313131">
                                 <small>{{ str_limit($blog->description) }}</small>
                             </p>
                         </div>
