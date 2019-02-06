@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', '首页')
+@section('title', isset($categoryName) ? $categoryName.'列表' : '资源列表')
 
 @section('content')
     <!-- 搜索 -->
