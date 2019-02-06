@@ -107,7 +107,7 @@
                     @foreach($blogs as $blog)
                         <div class="no">0{{$loop->iteration}}</div>
                         <div class="description">
-                            <div class="desc-title" style="margin-top: 10px; font-size: 18px; margin-bottom: 10px;">
+                            <div class="desc-title">
                                 <a href="{{ $blog->url }}" target="_blank" style="" class="atitle click"
                                    data-id="{{ $blog->id }}">{{ $blog->title }}</a>
                             </div>
