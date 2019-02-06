@@ -112,7 +112,7 @@
                                    data-id="{{ $blog->id }}">{{ $blog->title }}</a>
                             </div>
                             <p>
-                                <small>{{ $blog->description }}</small>
+                                <small>{{ str_limit($blog->description) }}</small>
                             </p>
                         </div>
                     @endforeach
