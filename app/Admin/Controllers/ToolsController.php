@@ -10,6 +10,7 @@ use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 use App\Models\Category;
+use Illuminate\Http\Request;
 
 class ToolsController extends Controller
 {
@@ -21,11 +22,13 @@ class ToolsController extends Controller
      * @param Content $content
      * @return Content
      */
-    public function index(Content $content)
+    public function index(Content $content, Request $request)
     {
+
+        $is_show = $request->get('is_show', 1);
         return $content
             ->header('工具列表')
-            ->body($this->grid());
+            ->body($this->grid($is_show));
     }
 
     /**
@@ -75,11 +78,11 @@ class ToolsController extends Controller
      *
      * @return Grid
      */
-    protected function grid()
+    protected function grid($is_show)
     {
         $grid = new Grid(new Tool);
         // 使用 with 来预加载商品类目数据，减少 SQL 查询
-        $grid->model()->with(['category']);
+        $grid->model()->where('is_show', $is_show)->with(['category']);
 
         $grid->id('Id')->sortable();
 //        $grid->category_id('Category id');
@@ -153,6 +156,8 @@ class ToolsController extends Controller
 //        $form->text('icon', '图标');
         $form->textarea('description', '描述');
         $form->number('click_count', '点击率');
+        $form->radio('is_show', '是否显示')->options(['1' => 'YES', 'f'=> 'NO'])->default('1');
+
 
         return $form;
     }

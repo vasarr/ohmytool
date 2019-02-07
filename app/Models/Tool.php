@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tool extends Model
 {
     protected $fillable = [
-      'title', 'url', 'icon', 'description', 'click_count'
+      'title', 'category_id', 'url', 'icon', 'description', 'click_count', 'is_show',
     ];
 
     public function category()

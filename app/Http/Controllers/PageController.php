@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ToolRecommendRequest;
 use App\Models\Tool;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    /**
+     * 首页
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function root(Request $request)
     {
         // API 文档
@@ -31,6 +37,10 @@ class PageController extends Controller
     }
 
 
+    /**
+     * 点击数量+1
+     * @param Request $request
+     */
     public function clickCount(Request $request)
     {
         if ($request->ajax())
@@ -42,4 +52,28 @@ class PageController extends Controller
             }
         }
     }
+
+    /**
+     * front recommend tools
+     * @param Request $request
+     */
+    public function recommend(Request $request)
+    {
+        return view('page.recommend');
+    }
+
+    /**
+     * 添加推荐资源
+     * @param Request $request
+     */
+    public function addTool(ToolRecommendRequest $request, Tool $tool)
+    {
+        if ($request->ajax()) {
+            $tool->fill($request->all());
+            $tool->is_show = 0;
+            $tool->save();
+            return 'ok';
+        }
+    }
+
 }

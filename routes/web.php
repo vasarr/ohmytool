@@ -16,3 +16,6 @@
 Route::get('/', 'PageController@root')->name('root');
 Route::put('page/count', 'PageController@clickCount')->name('page.count');
 Route::get('category/{id}', 'CategoryController@index')->name('category.index');
+
+Route::get('recommend', 'PageController@recommend')->name('page.recommend');
+Route::post('recommend', 'PageController@addTool')->name('page.recommend');
