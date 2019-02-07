@@ -102,8 +102,8 @@
                 <div class="header" style="font-size: 16px;">
                     <span class="glyphicon glyphicon-bullhorn" aria-hidden="true" style="margin-right: 10px; color: red; font-size: 18px;"></span><span>Ohmytool 平台</span>
                 </div>
-                <div style="padding: 15px; line-height: 22px; border-bottom: 1px solid #F2F2F2;margin-bottom: 5px;">
-                    这是一个分享资源，推荐查阅资源的分类网站。欢迎向我推荐资源。
+                <div style="padding: 20px; line-height: 22px; border-bottom: 1px solid #F2F2F2;margin-bottom: 5px;">
+                    这是一个分享资源，推荐查阅资源的导航网站。～欢迎推荐资源。
                 </div>
                 <div style="padding: 5px 0 10px 0;" class="">
                     <a class="btn center-block" href="{{ route('page.recommend') }}" role="button" style="border: 1px solid red;letter-spacing:2px; margin: 0 100px 0 100px; color: red;box-shadow: none;"><span class="glyphicon glyphicon-pencil" aria-hidden="true" style="margin-right: 10px;"></span><strong>推荐资源</strong></a>

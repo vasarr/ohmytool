@@ -21,7 +21,7 @@
 
 LOCK TABLES `admin_menu` WRITE;
 /*!40000 ALTER TABLE `admin_menu` DISABLE KEYS */;
-INSERT INTO `admin_menu` VALUES (1,0,1,'首页','fa-bar-chart','/',NULL,NULL,'2019-01-31 16:22:34'),(2,0,2,'系统管理','fa-tasks',NULL,NULL,NULL,'2019-01-31 16:22:54'),(3,2,3,'管理员','fa-users','auth/users',NULL,NULL,'2019-01-31 16:23:05'),(4,2,4,'角色','fa-user','auth/roles',NULL,NULL,'2019-01-31 16:23:18'),(5,2,5,'权限','fa-ban','auth/permissions',NULL,NULL,'2019-01-31 16:23:36'),(6,2,6,'菜单','fa-bars','auth/menu',NULL,NULL,'2019-01-31 16:23:51'),(7,2,7,'操作日志','fa-history','auth/logs',NULL,NULL,'2019-01-31 16:24:08'),(8,0,0,'工具列表','fa-bars','/tools',NULL,'2019-01-31 16:28:49','2019-01-31 16:28:49'),(9,0,0,'类目管理','fa-bars','/categories',NULL,'2019-01-31 16:35:59','2019-01-31 16:35:59');
+INSERT INTO `admin_menu` VALUES (1,0,1,'首页','fa-bar-chart','/',NULL,NULL,'2019-01-31 16:22:34'),(2,0,2,'系统管理','fa-tasks',NULL,NULL,NULL,'2019-01-31 16:22:54'),(3,2,3,'管理员','fa-users','auth/users',NULL,NULL,'2019-01-31 16:23:05'),(4,2,4,'角色','fa-user','auth/roles',NULL,NULL,'2019-01-31 16:23:18'),(5,2,5,'权限','fa-ban','auth/permissions',NULL,NULL,'2019-01-31 16:23:36'),(6,2,6,'菜单','fa-bars','auth/menu',NULL,NULL,'2019-01-31 16:23:51'),(7,2,7,'操作日志','fa-history','auth/logs',NULL,NULL,'2019-01-31 16:24:08'),(8,10,0,'资源列表','fa-th-list','/tools',NULL,'2019-01-31 16:28:49','2019-02-07 11:03:22'),(9,0,0,'类目管理','fa-bars','/categories',NULL,'2019-01-31 16:35:59','2019-01-31 16:35:59'),(10,0,0,'工具管理','fa-briefcase',NULL,NULL,'2019-02-07 10:55:23','2019-02-07 10:56:00'),(11,10,0,'审核资源','fa-list-ul','/tools?is_show=0',NULL,'2019-02-07 11:02:30','2019-02-07 11:24:20');
 /*!40000 ALTER TABLE `admin_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,4 +103,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-31  8:55:32
+-- Dump completed on 2019-02-07 12:39:00

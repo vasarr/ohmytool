@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', isset($categoryName) ? $categoryName.'列表' : '资源列表')
+@section('title', "推荐资源")
 
 @section('content')
     <div class="row">
@@ -28,7 +28,7 @@
                     </div>
                     <div class="row" style="display: flex; margin: 0 20px 20px 5px;">
                         <div class="col-md-12" ">
-                        <input type=" text" class="form-control" name="url" placeholder="url路径 eg. https://www.ohmytool.net">
+                        <input type=" text" class="form-control" name="url" placeholder="url路径 eg: https://www.ohmytool.net">
                     </div>
             </div>
             <div class="row" style="display: flex; margin: 0 20px 20px 5px;">
@@ -67,29 +67,44 @@
                 var title = $("input[name=title]").val();
                 var url = $("input[name=url]").val();
                 var description = $("textarea[name=description]").val();
-                // if (!category_id) {
-                //     alertInfo("请选择分类");
-                //     return false;
-                // }
-                // if (!title) {
-                //     alertInfo("请填写标题");
-                //     return false;
-                // }
-                // if (!url) {
-                //     alertInfo("请填写url地址");
-                //     return false;
-                // }
-                // if (!description) {
-                //     alertInfo("请填写简要描述");
-                //     return false;
-                // }
+                if (!category_id) {
+                    alertInfo("请选择分类");
+                    return false;
+                }
+                if (!title) {
+                    alertInfo("请填写标题");
+                    return false;
+                }
+                if (!url) {
+                    alertInfo("请填写url地址");
+                    return false;
+                }
+                if (!description) {
+                    alertInfo("请填写简要描述");
+                    return false;
+                }
                 // alert($("form").serialize());
                 $.ajax({
                     type: "POST",
                     url: "{{ route('page.recommend') }}",
                     data: $("form").serialize(),
                     success: function(msg) {
-                        // alert("Data Saved: " + msg);
+                        swal('提交成功', '', 'success').then(() => {
+                            window.location.href = '/';
+                        });
+
+                    },
+                    error: function (error) {
+                        console.log(error);
+                        if (error.status === 422) {
+                            // console.log(error.responseJSON.errors);
+                            var html = '<div>';
+                            $.each(error.responseJSON.errors, function (errors, value) {
+                                html += value+'<br>';
+                            });
+                            html += '</div>';
+                            swal({content: $(html)[0], icon: 'error'})
+                        }
                     }
                 });
             });
