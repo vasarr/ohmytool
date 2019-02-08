@@ -182,19 +182,23 @@
     flex: 255px;
 }
 
-
 .recommend-tool {
-    height: 500px;
+    /*height: 500px;*/
     border: 1px solid #E3EAEF;
     border-radius: 5px;
-    margin: 20px 160px 0 160px;
+    padding: 20px;
+    margin: 20px 50px 0 50px;
     background: #fff;
 }
 
 #tool-title {
-    margin: 30px 0 30px 0;
+    margin: 0 0 30px 0;
     text-align: center;
     font-size: 18px;
+}
+
+.input-round {
+    margin: 0 20px 20px 20px;
 }
 
 .submit .btn:focus,

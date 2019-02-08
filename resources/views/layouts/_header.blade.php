@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://www.ohmytool.net"><img src="/logo.png" style="height: 30px; margin-top: -5px;"></a>
+            <a class="navbar-brand" href="https://www.ohmytool.net"><img src="/logo.png" style="height: 30px; margin-top: -5px;" alt="The Ohmytool logo: a upper letter t"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
