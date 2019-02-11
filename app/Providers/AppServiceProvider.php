@@ -15,7 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Tool::observe(ToolRecommendObserver::class);
+        \Carbon\Carbon::setLocale('zh');
+//        Tool::observe(ToolRecommendObserver::class);
     }
 
     /**

@@ -2,17 +2,18 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\Tool;
+use App\Handlers\ImageUploadHandler;
+use App\Models\Article;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
-use App\Models\Category;
 use Illuminate\Http\Request;
 
-class ToolsController extends Controller
+class ArticlesController extends Controller
 {
     use HasResourceActions;
 
@@ -22,13 +23,11 @@ class ToolsController extends Controller
      * @param Content $content
      * @return Content
      */
-    public function index(Content $content, Request $request)
+    public function index(Content $content)
     {
-
-        $is_show = $request->get('is_show', 1);
         return $content
-            ->header('工具列表')
-            ->body($this->grid($is_show));
+            ->header('随笔列表')
+            ->body($this->grid());
     }
 
     /**
@@ -56,7 +55,7 @@ class ToolsController extends Controller
     public function edit($id, Content $content)
     {
         return $content
-            ->header('编辑工具')
+            ->header('编辑')
             ->body($this->form()->edit($id));
     }
 
@@ -69,7 +68,7 @@ class ToolsController extends Controller
     public function create(Content $content)
     {
         return $content
-            ->header('创建工具')
+            ->header('创建随笔')
             ->body($this->form());
     }
 
@@ -78,22 +77,16 @@ class ToolsController extends Controller
      *
      * @return Grid
      */
-    protected function grid($is_show)
+    protected function grid()
     {
-        $grid = new Grid(new Tool);
-        // 使用 with 来预加载商品类目数据，减少 SQL 查询
-        $grid->model()->where('is_show', $is_show)->with(['category']);
+        $grid = new Grid(new Article);
 
-        $grid->id('Id')->sortable();
-//        $grid->category_id('Category id');
-        $grid->title('名称');
+        $grid->id('Id');
+        $grid->title('标题');
         $grid->column('category.name', '类目');
-        $grid->url('超链接');
-//        $grid->icon('Icon');
-//        $grid->description('Description');
         $grid->click_count('点击量');
-//        $grid->created_at('Created at');
-//        $grid->updated_at('Updated at');
+        $grid->is_show('是否显示');
+
         $grid->actions(function ($actions) {
             $actions->disableView();
             $actions->disableDelete();
@@ -104,7 +97,6 @@ class ToolsController extends Controller
                 $batch->disableDelete();
             });
         });
-
         return $grid;
     }
 
@@ -116,15 +108,14 @@ class ToolsController extends Controller
      */
     protected function detail($id)
     {
-        $show = new Show(Tool::findOrFail($id));
+        $show = new Show(Article::findOrFail($id));
 
         $show->id('Id');
         $show->category_id('Category id');
         $show->title('Title');
-        $show->url('Url');
-        $show->icon('Icon');
-        $show->description('Description');
+        $show->content('Content');
         $show->click_count('Click count');
+        $show->is_show('Is show');
         $show->created_at('Created at');
         $show->updated_at('Updated at');
 
@@ -138,11 +129,10 @@ class ToolsController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new Tool);
+        $form = new Form(new Article);
 
-//        $form->number('category_id', 'Category id');
-        $form->text('title', '名称');
-
+        $form->text('title', '标题');
+        $form->textarea('desc', '简短描述');
         // 添加一个类目字段，与之前类目管理类似，使用 Ajax 的方式来搜索添加
         $form->select('category_id', '类目')->options(function ($id) {
             $category = Category::find($id);
@@ -151,13 +141,32 @@ class ToolsController extends Controller
             }
         })->ajax('/'.config('admin.route.prefix').'/api/categories?is_directory=0');
 
-        $form->text('url', '超链接');
-//        $form->text('icon', '图标');
-        $form->textarea('description', '描述');
+        $form->simditor('content', '内容');
         $form->number('click_count', '点击率');
         $form->radio('is_show', '是否显示')->options(['1' => 'YES', '0'=> 'NO'])->default('1');
 
-
         return $form;
+    }
+
+    public function uploadImage(Request $request, ImageUploadHandler $handler)
+    {
+        // 初始化返回数据，默认是失败的
+        $data = [
+            'success'   => false,
+            'msg'       => '上传失败!',
+            'file_path' => ''
+        ];
+        // 判断是否有上传文件，并赋值给 $file
+        if ($file = $request->upload_file) {
+            // 保存图片到本地
+            $result = $handler->save($request->upload_file, 'articles', 'a', 1024);
+            // 图片保存成功的话
+            if ($result) {
+                $data['file_path'] = $result['path'];
+                $data['msg']       = "上传成功!";
+                $data['success']   = true;
+            }
+        }
+        return $data;
     }
 }

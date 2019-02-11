@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tool extends Model
+class Article extends Model
 {
     protected $fillable = [
-      'title', 'category_id', 'url', 'icon', 'description', 'click_count', 'is_show',
+        'title', 'category_id', 'content', 'click_count', 'is_show',
     ];
 
     protected $casts = [

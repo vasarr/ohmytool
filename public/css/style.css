@@ -210,6 +210,24 @@
     outline: none;
 }
 
+
+.article-title {
+    margin-left: 20px;
+}
+
+.article-title a {
+    color: #545454;
+    font-size: 18px;
+}
+
+.article-title H2 {
+    font-size: 18px;
+}
+
+.article-title a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
 .footer {
     margin-top: 60px;
     background: #1B1C1C;

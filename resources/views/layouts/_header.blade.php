@@ -12,7 +12,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="" ><a href="/" style="color: rgba(0,0,0,.84)!important;">资源</a></li>
+                <li><a href="{{ route('article.index') }}">随笔</a></li>
                 <li><a href="{{ route('category.index', 2) }}">在线文档</a></li>
                 <li><a href="{{ route('category.index', 5) }}">博客列表</a></li>
                 <li><a href="{{ route('category.index', 8) }}">常用工具</a></li>

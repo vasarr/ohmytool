@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $fillable = ['name', 'is_directory', 'level', 'path'];
+
     protected $casts = [
         'is_directory' => 'boolean',
     ];
