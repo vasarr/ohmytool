@@ -47,9 +47,9 @@
             </button>
             <a class="navbar-brand" href="https://www.ohmytool.net" target="_blank"><img src="/logo.png" style="height: 30px; margin-top: -5px;"></a>
         </div>
-        <form class="navbar-form">
+        <form class="navbar-form search-form" method="get" action="{{ route('search.index') }}">
             <div class="input-group">
-                <input type="text" class="form-control" size="50">
+                <input type="text" class="form-control" size="50" name="q">
                 <span class="input-group-btn">
                <button class="btn btn-search" style="background: #24A457; color: white;">搜 索</button>
             </span>

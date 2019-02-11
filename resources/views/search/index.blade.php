@@ -2,6 +2,19 @@
 @section('title', '搜索列表')
 
 @section('content')
+    <!-- 搜索 -->
+    <div class="row">
+        <div class="col-lg-6">
+            <form class="navbar-form search-form" method="get" action="{{ route('search.index') }}">
+                <div class="input-group">
+                    <input type="text" class="form-control" size="50" name="q">
+                    <span class="input-group-btn">
+               <button class="btn btn-search" style="background: #24A457; color: white;">搜 索</button>
+            </span>
+                </div>
+            </form>
+        </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
     <!-- 面包屑 -->
     <div class="row" style="margin-top: 10px;">
         <div class="col-md-12">

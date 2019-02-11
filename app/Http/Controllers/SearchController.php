@@ -11,10 +11,11 @@ class SearchController extends Controller
 
     public function index(Request $request)
     {
-        $q = $request->input('q');
+        $search = $request->input('q');
+        $tools = Tool::query()->where('title', 'like', "%{$search}%")->orderByDesc('click_count')->paginate();
 
         return view('search.index', [
-            'tools' => $pager,
+            'tools' => $tools,
             'filters'  => [
                 'q' => $search,
             ],

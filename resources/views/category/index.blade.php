@@ -2,17 +2,7 @@
 @section('title', isset($categoryName) ? $categoryName.'列表' : '资源列表')
 
 @section('content')
-    <!-- 搜索 -->
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Go!</button>
-            </span>
-            </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-    </div><!-- /.row -->
+
     <!-- 面包屑 -->
     <div class="row" style="margin-top: 10px;">
         <div class="col-md-12">

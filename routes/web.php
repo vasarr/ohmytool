@@ -19,3 +19,5 @@ Route::get('category/{id}', 'CategoryController@index')->name('category.index');
 
 Route::get('recommend', 'PageController@recommend')->name('page.recommend');
 Route::post('recommend', 'PageController@addTool')->name('page.recommend');
+
+Route::get('search', 'SearchController@index')->name('search.index');
