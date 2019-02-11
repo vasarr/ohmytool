@@ -36,3 +36,24 @@
         <!--/.nav-collapse -->
     </div>
 </nav>
+<div class="search fixed-top" style="border-top: none;border-bottom: 1px solid #D8D8D9; height: 50px;display:none;">
+    <div class="container">
+        <div class="navbar-header" style="margin-right: 10px;">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://www.ohmytool.net" target="_blank"><img src="/logo.png" style="height: 30px; margin-top: -5px;"></a>
+        </div>
+        <form class="navbar-form">
+            <div class="input-group">
+                <input type="text" class="form-control" size="50">
+                <span class="input-group-btn">
+               <button class="btn btn-search" style="background: #24A457; color: white;">搜 索</button>
+            </span>
+            </div>
+        </form>
+    </div>
+</div>

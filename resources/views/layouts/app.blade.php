@@ -65,6 +65,21 @@
         s.parentNode.insertBefore(hm, s);
     })();
 </script>
+<script>
+    $(window).scroll(function() {
+        var tops = $(window).scrollTop();
+        console.log(tops);
+        if (tops > 60) {
+            // $('.search').show("slow");
+            // $('.search').show();
+            $('.search').fadeIn('slow');
+            $('.search').addClass('navbar  navbar-fixed-top');
+        } else {
+            // $('.search').hide();
+            $('.search').fadeOut();
+        }
+    });
+</script>
 
 @yield('script')
 
