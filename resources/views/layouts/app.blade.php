@@ -68,7 +68,7 @@
 <script>
     $(window).scroll(function() {
         var tops = $(window).scrollTop();
-        console.log(tops);
+        // console.log(tops);
         if (tops > 60) {
             // $('.search').show("slow");
             // $('.search').show();
