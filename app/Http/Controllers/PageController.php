@@ -24,13 +24,13 @@ class PageController extends Controller
         $cate_manual_id = 11;
         $cate_article_id = 12;
 
-        $apiDocs = Tool::query()->where('category_id', $cate_api_doc_id)->orderByDesc('click_count')->limit(15)->get();
-        $manuals = Tool::query()->where('category_id', $cate_manual_id)->orderByDesc('click_count')->limit(18)->get();
-        $blogs = Tool::query()->where('category_id', $cate_blog_id)->orderByDesc('click_count')->limit(9)->get();
-        $tools = Tool::query()->where('category_id', $cate_tool_id)->orderByDesc('click_count')->limit(20)->get();
-        $englishs = Tool::query()->where('category_id', $cate_english_id)->orderByDesc('click_count')->limit(32)->get();
-        $softwares = Tool::query()->where('category_id', $cate_software_id)->orderByDesc('click_count')->limit(32)->get();
-        $articles = Tool::query()->where('category_id', $cate_article_id)->orderByDesc('click_count')->limit(32)->get();
+        $apiDocs = Tool::query()->where('category_id', $cate_api_doc_id)->where('is_show', true)->orderByDesc('click_count')->limit(15)->get();
+        $manuals = Tool::query()->where('category_id', $cate_manual_id)->where('is_show', true)->orderByDesc('click_count')->limit(18)->get();
+        $blogs = Tool::query()->where('category_id', $cate_blog_id)->where('is_show', true)->orderByDesc('click_count')->limit(9)->get();
+        $tools = Tool::query()->where('category_id', $cate_tool_id)->where('is_show', true)->orderByDesc('click_count')->limit(20)->get();
+        $englishs = Tool::query()->where('category_id', $cate_english_id)->where('is_show', true)->orderByDesc('click_count')->limit(32)->get();
+        $softwares = Tool::query()->where('category_id', $cate_software_id)->where('is_show', true)->orderByDesc('click_count')->limit(32)->get();
+        $articles = Tool::query()->where('category_id', $cate_article_id)->where('is_show', true)->orderByDesc('click_count')->limit(32)->get();
 
 
         return view("page.index", compact('apiDocs', 'blogs', 'tools', 'englishs', 'softwares', 'manuals', 'articles'));

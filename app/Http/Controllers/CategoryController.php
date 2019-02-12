@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function index(Request $request, $id)
     {
         $categoryName = Category::query()->where('id', $id)->value('name');
-        $tools = Tool::query()->orderByDesc('click_count')->where('category_id', $id)->paginate(15);;
+        $tools = Tool::query()->orderByDesc('click_count')->where('is_show', true)->where('category_id', $id)->paginate(15);;
 
         $cate_blog_id = 5;
         $blogs = Tool::query()->where('category_id', $cate_blog_id)->orderByDesc('click_count')->limit(10)->get();
