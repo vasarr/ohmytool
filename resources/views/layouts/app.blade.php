@@ -10,7 +10,7 @@
     <meta name="author" content="vasar">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="{{ URL::asset('favicon.ico') }}/">
     <title>ohmytool - 分享资源和工具推荐</title>
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->
     <script src="https://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/style.css') }}">
     <style type="text/css">
         html {
             position: relative;
