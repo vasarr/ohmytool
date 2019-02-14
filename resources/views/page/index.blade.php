@@ -68,8 +68,8 @@
                                 <a href="{{ $resouce->url }}" target="_blank" class="click" data-id="{{ $resouce->id }}" style="display: block;"><h3 style="font-size: 14px;margin: 0;padding: 0;">《{{ $resouce->title }}》</h3></a>
                             </div>
                             <div class="detail">
-                                <div style="height: 35px;background: #F5F5FB;">
-                                    <p style="text-align:left;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">{{ $resouce->description }}</p></div>
+                                <div style="height: 90px;background: #F5F5FB;overflow:scroll;">
+                                    <p style="text-align:left;overflow:hidden;text-overflow:ellipsis;">{{ $resouce->description }}</p></div>
                             </div>
                         </div>
                     </div>
