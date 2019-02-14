@@ -142,6 +142,8 @@ class ToolsController extends Controller
 
 //        $form->number('category_id', 'Category id');
         $form->text('title', '名称');
+        // 创建一个选择图片的框
+        $form->image('icon', '图片')->move('books/'.date("Ym/d", time()))->uniqueName();
 
         // 添加一个类目字段，与之前类目管理类似，使用 Ajax 的方式来搜索添加
         $form->select('category_id', '类目')->options(function ($id) {
@@ -156,6 +158,7 @@ class ToolsController extends Controller
         $form->textarea('description', '描述');
         $form->number('click_count', '点击率');
         $form->radio('is_show', '是否显示')->options(['1' => 'YES', '0'=> 'NO'])->default('1');
+        $form->radio('is_recommend', '是否推荐')->options(['1' => 'YES', '0'=> 'NO'])->default('1');
 
 
         return $form;
