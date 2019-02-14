@@ -14,7 +14,7 @@
     <!-- 列表 -->
     <div class="row">
         <div class="col-md-8 left">
-            <div class="content">
+            <div class="content vasar">
                 <div class="blog-post">
                     <h2 class="blog-post-title" style="font-size: 18px;">{{ $article->title }}</h2>
                     <p style="margin-top: 15px; border-bottom: 1px solid #EEEEEE;padding-bottom: 10px; font-size: 12px;color: #B2B6B4;">创建于 <span data-toggle="tooltip" data-original-title="{{ $article->created_at->toDateTimeString() }}">{{ $article->created_at->diffForHumans() }}</span> / <span>阅读数 {{ $article->click_count }} </span></p>

@@ -20,7 +20,7 @@
         <div class="col-md-12">
             <ol class="breadcrumb">
                 <li><a href="/">Home</a></li>
-                <li class="active">Test</li>
+                <li class="active">搜索列表</li>
             </ol>
         </div>
     </div>

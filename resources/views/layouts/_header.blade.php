@@ -8,17 +8,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://www.ohmytool.net"><img src="/logo.png" style="height: 30px; margin-top: -5px;" alt="The Ohmytool logo: a upper letter t"></a>
+            <a class="navbar-brand" href="https://www.ohmytool.net"><img src="/logo.png" style="height: 30px; margin-top: -5px;"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="{{ route('article.index') }}">随笔</a></li>
+                <li class=""><a href="{{ route('article.index') }}" style="color: rgba(0,0,0,.84)!important;">随笔</a></li>
                 <li><a href="{{ route('category.index', 2) }}">在线文档</a></li>
                 <li><a href="{{ route('category.index', 5) }}">博客列表</a></li>
                 <li><a href="{{ route('category.index', 8) }}">常用工具</a></li>
                 <li><a href="{{ route('category.index', 9) }}">推荐软件</a></li>
                 <li><a href="{{ route('category.index', 6) }}">学习英语</a></li>
-                {{--<li><a href="#contact">关于</a></li>--}}
                 <!-- <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -45,7 +44,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://www.ohmytool.net" target="_blank"><img src="/logo.png" style="height: 30px; margin-top: -5px;"></a>
+            <a class="navbar-brand" href="https://www.ohmytool.net"><img src="/logo.png" style="height: 30px; margin-top: -5px;"></a>
         </div>
         <form class="navbar-form search-form" method="get" action="{{ route('search.index') }}">
             <div class="input-group">

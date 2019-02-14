@@ -2,7 +2,6 @@
 @section('title', isset($categoryName) ? $categoryName.'列表' : '资源列表')
 
 @section('content')
-
     <!-- 面包屑 -->
     <div class="row" style="margin-top: 10px;">
         <div class="col-md-12">
@@ -17,12 +16,12 @@
         <!-- 左边 -->
         <div class="col-md-8">
             @foreach($tools as $tool)
-            <div class="list-group">
-                <a href="{{ $tool->url }}" class="list-group-item click" target="_blank" data-id="{{ $tool->id }}">
-                    <h5 class="list-group-item-heading">{{ $tool->title }}</h5>
-                    <p class="list-group-item-text" style="font-size: 12px; padding: 10px 0 10px 0;">{{ $tool->description }}</p>
-                </a>
-            </div>
+                <div class="list-group">
+                    <a href="{{ $tool->url }}" class="list-group-item click" target="_blank" data-id="{{ $tool->id }}">
+                        <h5 class="list-group-item-heading">{{ $tool->title }}</h5>
+                        <p class="list-group-item-text" style="font-size: 12px; padding: 10px 0 10px 0;">{{ $tool->description }}</p>
+                    </a>
+                </div>
             @endforeach
             {{--分页--}}
             {{ $tools->links() }}

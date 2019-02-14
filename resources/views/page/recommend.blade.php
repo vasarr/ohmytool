@@ -2,7 +2,7 @@
 @section('title', "推荐资源")
 
 @section('content')
-    <div class="row recommend-tool">
+    <div class="row recommend-tool vasar">
         <div class="col-md-12">
             <div id="tool-title">
                 <span class="glyphicon glyphicon-pencil" aria-hidden="true" style="margin-right: 5px;"></span>

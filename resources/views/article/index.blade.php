@@ -15,11 +15,11 @@
 <!-- 列表 -->
 <div class="row">
     <div class="col-md-8 left">
-        <div class="content">
-            <div class="docapi">
+        <div class="content vasar">
+            <div class="document">
                 <div class="list-header">
                     <div class="category-name">
-                        <a href="">随笔列表</a>
+                        <a href="javascript:;"><h2>随笔列表</h2></a>
                     </div>
                 </div>
             </div>
