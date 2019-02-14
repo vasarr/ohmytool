@@ -15,7 +15,7 @@
             <div class="list">
                 @foreach($apiDocs as $resouce)
                     <div class="document-tools t-hover-shadow">
-                        <div class="title"><a class="click" data-id="{{ $resouce->id }}" href="{{ $resouce->url }}" target="_blank"><h3>{{ mb_substr($resouce->title,0,10,'utf-8') }}</h3></a>
+                        <div class="title"><a class="click" data-id="{{ $resouce->id }}" href="{{ $resouce->url }}" target="_blank"><h3>{{ $resouce->title }}</h3></a>
                         </div>
                         <div class="detail">
                             <div style="height: 35px;background: #F5F5FB;">

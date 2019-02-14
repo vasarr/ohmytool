@@ -25,14 +25,46 @@ class PageController extends Controller
         $cate_article_id = 12;
         $cate_book_id = 17;
 
-        $apiDocs = Tool::query()->where('category_id', $cate_api_doc_id)->where('is_show', true)->orderByDesc('click_count')->limit(12)->get();
-        $manuals = Tool::query()->where('category_id', $cate_manual_id)->where('is_show', true)->orderByDesc('click_count')->limit(18)->get();
-        $blogs = Tool::query()->where('category_id', $cate_blog_id)->where('is_show', true)->orderByDesc('click_count')->limit(7)->get();
-        $tools = Tool::query()->where('category_id', $cate_tool_id)->where('is_show', true)->orderByDesc('click_count')->limit(10)->get();
-        $englishs = Tool::query()->where('category_id', $cate_english_id)->where('is_show', true)->orderByDesc('click_count')->limit(12)->get();
-        $softwares = Tool::query()->where('category_id', $cate_software_id)->where('is_show', true)->orderByDesc('click_count')->limit(9)->get();
-        $articles = Tool::query()->where('category_id', $cate_article_id)->where('is_show', true)->orderByDesc('click_count')->limit(12)->get();
-        $books = Tool::query()->where('category_id', $cate_book_id)->where('is_show', true)->orderByDesc('click_count')->limit(8)->get();
+        $apiDocs = Tool::query()->where('category_id', $cate_api_doc_id)
+            ->where('is_show', true)
+            ->where('is_recommend', true)
+            ->orderByDesc('click_count')
+            ->limit(12)->get();
+//        $manuals = Tool::query()->where('category_id', $cate_manual_id)
+//            ->where('is_show', true)
+//            ->orderByDesc('click_count')
+//            ->limit(18)->get();
+        $blogs = Tool::query()
+            ->where('category_id', $cate_blog_id)
+            ->where('is_show', true)
+            ->where('is_recommend', true)
+            ->orderByDesc('click_count')
+            ->limit(7)->get();
+        $tools = Tool::query()
+            ->where('category_id', $cate_tool_id)
+            ->where('is_show', true)
+            ->where('is_recommend', true)
+            ->orderByDesc('click_count')
+            ->limit(16)->get();
+        $englishs = Tool::query()
+            ->where('category_id', $cate_english_id)
+            ->where('is_show', true)
+            ->where('is_recommend', true)
+            ->orderByDesc('click_count')
+            ->limit(12)->get();
+        $softwares = Tool::query()
+            ->where('category_id', $cate_software_id)
+            ->where('is_show', true)
+            ->where('is_recommend', true)
+            ->orderByDesc('click_count')
+            ->limit(12)->get();
+        $articles = Tool::query()
+            ->where('category_id', $cate_article_id)
+            ->where('is_show', true)
+            ->where('is_recommend', true)
+            ->orderByDesc('click_count')
+            ->limit(12)->get();
+        $books = Tool::query()->where('category_id', $cate_book_id)->where('is_show', true)->orderByDesc('click_count')->limit(9)->get();
 
 
         return view("page.index", compact('apiDocs', 'blogs', 'tools', 'englishs', 'softwares', 'manuals', 'articles', 'books'));

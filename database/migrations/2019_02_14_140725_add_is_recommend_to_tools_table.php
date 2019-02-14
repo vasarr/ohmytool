@@ -14,7 +14,7 @@ class AddIsRecommendToToolsTable extends Migration
     public function up()
     {
         Schema::table('tools', function (Blueprint $table) {
-            $table->boolean('is_recommend')->default(true)->comment('是否显示')->after('is_show');
+            $table->boolean('is_recommend')->default(false)->comment('是否显示')->after('is_show');
         });
     }
 
