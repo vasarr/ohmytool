@@ -64,8 +64,12 @@ class PageController extends Controller
             ->where('is_recommend', true)
             ->orderByDesc('click_count')
             ->limit(12)->get();
-        $books = Tool::query()->where('category_id', $cate_book_id)->where('is_show', true)->orderByDesc('click_count')->limit(9)->get();
-
+        $books = Tool::query()
+            ->where('category_id', $cate_book_id)
+            ->where('is_show', true)
+            ->where('is_recommend', true)
+            ->orderByDesc('click_count')
+            ->limit(9)->get();
 
         return view("page.index", compact('apiDocs', 'blogs', 'tools', 'englishs', 'softwares', 'manuals', 'articles', 'books'));
     }
