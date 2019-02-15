@@ -12,7 +12,7 @@
         margin-bottom: 20px;
     }
     .markdown > p {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
 </style>
