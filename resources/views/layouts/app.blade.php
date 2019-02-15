@@ -11,7 +11,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{ URL::asset('favicon.ico') }}">
-    <title>ohmytool | 资源分享</title>
+    <title>@yield('title', 'ohmytool') | 资源分享</title>
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
