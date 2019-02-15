@@ -141,7 +141,8 @@ class ArticlesController extends Controller
             }
         })->ajax('/'.config('admin.route.prefix').'/api/categories?is_directory=0');
 
-        $form->simditor('content', '内容');
+//        $form->simditor('content', '内容');
+        $form->simplemde('content','内容');
         $form->number('click_count', '点击率');
         $form->radio('is_show', '是否显示')->options(['1' => 'YES', '0'=> 'NO'])->default('1');
 

@@ -315,8 +315,13 @@ return [
         'simditor' => [
             // Set to false if you want to disable this extension
             'enable' => true,
+
             // Editor configuration
             'config' => [
+//                'markdown'=> true,
+//                'toolbar' => [
+//                    'bold', 'italic', 'underline', 'color', '|', 'ol', 'ul', '|', 'markdown'
+//                ],
                 'upload' => [
                     'url' => '/ulgoqo/upload_image', # example api route: admin/api/upload
                     'fileKey' => 'upload_file',
@@ -324,12 +329,30 @@ return [
                     'leaveConfirm' => 'Uploading is in progress, are you sure to leave this page?'
                 ],
                 'tabIndent' => true,
-                'toolbar' => ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment'],
+//                'toolbar' => ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment'],
                 'toolbarFloat' => true,
                 'toolbarFloatOffset' => 0,
                 'toolbarHidden' => false,
                 'pasteImage' => true,
                 'cleanPaste' => false,
+            ]
+        ],
+        'simplemde' => [
+
+            // Set to false if you want to disable this extension
+            'enable' => true,
+
+            // If you want to set an alias for the calling method
+            //'alias' => 'markdown',
+
+            // Editor configuration
+            'config' => [
+                'autofocus'   => true,
+//                'placeholder' => 'xxxx',
+                'showIcons' => [
+                    'code', 'table','image','heading','horizontal-rule'
+                ],
+//                'status'=>false,
             ]
         ]
     ],
