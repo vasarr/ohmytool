@@ -3,7 +3,7 @@
         <div class="row info">
             <div class="col-md-3 column">
                 <h4>关于 Ohmytool</h4>
-                <p>Ohmytool 是一个分享资源、工具推荐的导航网站，是日常工作总结的实践，目的是让我们在『需要』的过程中超速获取。</p>
+                <p>Ohmytool 是一个资源分享、工具推荐的导航网站，是日常工作总结的实践，目的是让我们在『需要』的过程中超速获取。</p>
             </div>
             <div class="col-md-3"></div>
             <div class="col-md-3"></div>

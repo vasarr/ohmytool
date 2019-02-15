@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <meta name="description" content="Ohmytool 是一个分享资源、工具推荐的导航网站，是日常工作总结的实践，目的是让我们在需要的过程中超速获取。">
-    <meta name="keywords" content="php,laravel,在线文档,图书,程序员必读图书,英语,在线工具,程序员,工具,开发人员工具,小工具,API查询,文档,推荐软件,软件设计">
+    <meta name="description" content="Ohmytool 是一个分享、工具推荐的导航网站，是日常工作总结的实践，目的是让我们在需要的过程中超速获取。">
+    <meta name="keywords" content="资源,学习资源,php,laravel,在线文档,图书,程序员必读图书,英语,在线工具,程序员,工具,开发人员工具,小工具,API查询,文档,推荐软件,软件设计">
     <meta name="author" content="vasar">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{ URL::asset('favicon.ico') }}">
-    <title>ohmytool - 分享资源和工具推荐</title>
+    <title>ohmytool | 资源分享</title>
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
