@@ -3,6 +3,9 @@
 
 @section('style')
 <style>
+    .markdown {
+        margin-top: 25px;
+    }
     .markdown > pre {
         color: white;
         background: #3A3C3E;
@@ -32,6 +35,7 @@
                         @markdown($article->content)
                     </div>
                 </div><!-- /.blog-post -->
+
             </div>
         </div>
         <div class="col-md-4 right">
