@@ -9,10 +9,11 @@
     .markdown > pre {
         color: white;
         background: #3A3C3E;
-        margin-bottom: 20px;
+        margin: 20px 0 20px 0;
     }
     .markdown > p {
-        margin-bottom: 20px;
+        line-height: 26px;
+        /*margin-bottom: 20px;*/
     }
 
 </style>
