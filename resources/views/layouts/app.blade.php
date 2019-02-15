@@ -10,7 +10,7 @@
     <meta name="author" content="vasar">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ URL::asset('favicon.ico') }}/">
+    <link rel="icon" href="{{ URL::asset('favicon.ico') }}">
     <title>ohmytool - 分享资源和工具推荐</title>
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
