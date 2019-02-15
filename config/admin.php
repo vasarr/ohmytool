@@ -353,6 +353,7 @@ return [
                     'code', 'table','image','heading','horizontal-rule'
                 ],
 //                'status'=>false,
+                'lineWrapping' => true,
             ]
         ]
     ],

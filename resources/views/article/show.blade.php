@@ -9,7 +9,12 @@
     .markdown > pre {
         color: white;
         background: #3A3C3E;
+        margin-bottom: 20px;
     }
+    .markdown > p {
+        margin-bottom: 30px;
+    }
+
 </style>
 @endsection
 
