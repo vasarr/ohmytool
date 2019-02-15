@@ -150,7 +150,7 @@
                 <span class="glyphicon glyphicon-bullhorn" aria-hidden="true" style="margin-right: 10px; color: red; font-size: 18px;"></span><h2 style="padding: 0;margin: 0; font-size: 18px; display: inline-block;">Ohmytool 平台</h2>
             </div>
             <div style="padding: 15px; line-height: 22px; border-bottom: 1px solid #F2F2F2;margin-bottom: 5px;">
-                这是一个<strong style="color: #24A457;">『资源查阅，资源分享』</strong>的分类网站。在学习的路上指引你的成长。
+                这是一个<strong style="color: #24A457;">『资源查阅，资源分享』</strong>的推荐网站。在学习的路上指引你的成长。
             </div>
             <div style="padding: 5px 0 10px 0;" class="">
                 <a class="btn center-block" href="{{ route('page.recommend') }}" role="button" target="_blank" style="border: 1px solid red;letter-spacing:2px; margin: 0 100px 0 100px; color: red;box-shadow: none;"><span class="glyphicon glyphicon-pencil" aria-hidden="true" style="margin-right: 10px;"></span><strong>推荐资源</strong></a>
