@@ -25,7 +25,7 @@
         <div class="col-md-9">
             <div class="vasar" style="padding: 40px 35px 40px 35px;">
                 <div class="blog-post">
-                    <h2 class="blog-post-title" style="font-size: 22px;padding: 0;margin: 0;">{{ $article->title }} 创建于</h2>
+                    <h2 class="blog-post-title" style="font-size: 22px;padding: 0;margin: 0;">{{ $article->title }}</h2>
                     <p style="margin-top: 15px; border-bottom: 1px solid #EEEEEE;padding-bottom: 10px; font-size: 12px;color: #B2B6B4;">创建于 <span data-toggle="tooltip" data-original-title="{{ $article->created_at->toDateTimeString() }}">{{ $article->created_at->diffForHumans() }}</span> / <span>阅读数 {{ $article->click_count }} </span></p>
                     {{--<P style="text-indent: 2em;">{!! $article->content !!}</P>--}}
                     <div class="markdown">
