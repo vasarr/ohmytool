@@ -16,6 +16,17 @@
         /*margin-bottom: 20px;*/
     }
 
+    .markdown  img {
+        max-width: 100%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+        margin-top: 10px;
+        border: 1px solid #ddd;
+        -webkit-box-shadow: 0 0 30px #ccc;
+        box-shadow: 0 0 30px #ccc;
+    }
+
 </style>
 @endsection
 

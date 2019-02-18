@@ -27,3 +27,5 @@ Route::get('search', 'SearchController@index')->name('search.index');
 
 Route::get('articles', 'ArticlesController@index')->name('article.index');
 Route::get('articles/{id}', 'ArticlesController@show')->name('article.show');
+
+Route::post('uploadImage', 'PageController@mdUploadIamge')->name('recommend.uploadImage');

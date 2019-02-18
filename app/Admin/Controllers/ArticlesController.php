@@ -6,6 +6,7 @@ use App\Handlers\ImageUploadHandler;
 use App\Models\Article;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use Encore\Admin\Admin;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -16,6 +17,8 @@ use Illuminate\Http\Request;
 class ArticlesController extends Controller
 {
     use HasResourceActions;
+
+    protected $script = null;
 
     /**
      * Index interface.
@@ -129,6 +132,7 @@ class ArticlesController extends Controller
      */
     protected function form()
     {
+//        Admin::script('public/js/admin/mdeuploadimg.js');
         $form = new Form(new Article);
 
         $form->text('title', '标题');
@@ -155,15 +159,15 @@ class ArticlesController extends Controller
         $data = [
             'success'   => false,
             'msg'       => '上传失败!',
-            'file_path' => ''
+            'url' => ''
         ];
         // 判断是否有上传文件，并赋值给 $file
-        if ($file = $request->upload_file) {
+        if ($file = $request->image) {
             // 保存图片到本地
-            $result = $handler->save($request->upload_file, 'articles', 'a', 1024);
+            $result = $handler->save($request->image, 'articles', 'a', 1024);
             // 图片保存成功的话
             if ($result) {
-                $data['file_path'] = $result['path'];
+                $data['image'] = $result['path'];
                 $data['msg']       = "上传成功!";
                 $data['success']   = true;
             }

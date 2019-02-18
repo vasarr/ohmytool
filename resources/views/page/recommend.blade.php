@@ -37,6 +37,16 @@
                 </div>
                 <div class="row input-round">
                     <div class="col-md-12">
+                        <textarea id="mde" class="form-control" name="description" rows="5" placeholder="TESTMDE"></textarea>
+                    </div>
+                </div>
+                <div class="row input-round">
+                    <div class="col-md-12">
+                        <textarea id="mde2" class="form-control" name="description" rows="5" placeholder="TESTMDE22"></textarea>
+                    </div>
+                </div>
+                <div class="row input-round">
+                    <div class="col-md-12">
                         <div style="border-radius: 5px;background-color:#F8F8F9;border: 1px solid #D3E0E8;padding: 20px 0 20px 0;">
                             <div style="margin-left: 20px;">
                                 <button id="recommend-sbmt" class="btn" type="button" role="button" style="border: 1px solid red;letter-spacing:2px;color: white;background: #D51E2A;box-shadow: none;padding: 10px;">
@@ -53,6 +63,107 @@
 @stop
 
 @section('script')
+    <link rel="stylesheet" href="/simplemde/dist/simplemde.min.css">
+    <link rel="stylesheet" href="/simplemde/dist/font-awesome.min.css">
+    <script src="/simplemde/dist/simplemde.min.js"></script>
+    <script src="/simplemde/dist/inline-attachment.min.js"></script>
+    {{--<script src="/simplemde/dist/codemirror-4.inline-attachment.min.js"></script>--}}
+    <script src="/simplemde/dist/codemirror.inline-attachment.js"></script>
+    <script>
+        var inlineAttachmentConfig = {
+            uploadUrl: "{{ route('recommend.uploadImage') }}",
+            uploadFieldName: 'image',
+            jsonFieldName: 'image',
+            extraHeaders: {
+                'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            }
+        };
+
+
+        var simplemde = new SimpleMDE({
+            element: document.getElementById("mde2"),
+            spellChecker: false,
+            showIcons: ["code", "table"],
+        });
+        inlineAttachment.editors.codemirror4.attach(simplemde.codemirror, inlineAttachmentConfig);
+    </script>
+
+    <script>
+
+        var simplemde = new SimpleMDE({
+            element: document.getElementById("mde"),
+            spellChecker: false,
+            showIcons: ["code", "table"],
+        });
+
+        // 拖拽图片上传
+        simplemde.codemirror.on('drop', function (editor, e) {
+            e.preventDefault(); // 阻止浏览器默认打开拖拽文件
+            if (!e.dataTransfer && e.dataTransfer.files) {
+                alert('浏览器不支持此操作');
+                return;
+            }
+            var dataList = e.dataTransfer.files;
+            console.log(dataList);
+            // 处理图片批量上传
+            batchUpload(dataList, e);
+        });
+
+        // 粘贴图片上传
+        simplemde.codemirror.on('paste', function (editor, e) {
+            if (!e.clipboardData && e.clipboardData.files) {
+                alert('浏览器不支持此操作');
+                return;
+            }
+            // console.log(e);
+            console.log(e.clipboardData.items);
+            var dataList = e.clipboardData.items;
+            batchUpload(dataList, e);
+        });
+
+        // 处理图片批量上传
+        function batchUpload(dataList, e) {
+            for (let i = 0; i < dataList.length; i++) {
+                if (dataList[i].type.indexOf('image') === -1) {
+                    continue;
+                }
+                let formData = new FormData();
+                if (e.type === 'paste') {
+                    formData.append('image', dataList[i].getAsFile()); // 粘贴
+                } else if (e.type === 'drop') {
+                    formData.append('image', dataList[i]); // 拖拽
+                }
+                fileUpload(formData);
+            }
+        }
+
+        // ajax上传图片
+        function fileUpload(formData) {
+            {{--formData.append('_token', '{{ csrf_token() }}');--}}
+            $.ajax({
+                url: '{{ route('recommend.uploadImage') }}',
+                type: 'POST',
+                cache: false,
+                data: formData,
+                dataType: 'json',
+                timeout: 5000,
+                processData: false,
+                contentType: false,
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function (data) {
+                    console.log(data);
+                    // 将返回的图片url追加到编辑器内
+                    simplemde.value(simplemde.value() + "\n ![file](" + data.url + ") \n");
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("上传图片出错了");
+                }
+            });
+
+        }
+    </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
         function alertInfo(message) {

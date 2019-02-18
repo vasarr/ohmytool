@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Handlers\ImageUploadHandler;
 use App\Http\Requests\ToolRecommendRequest;
 use App\Models\Tool;
 use Illuminate\Http\Request;
@@ -114,4 +115,33 @@ class PageController extends Controller
         }
     }
 
+    /**
+     * simplemde upload image files
+     *
+     * @param Request $request
+     * @param ImageUploadHandler $handler
+     */
+    public function mdUploadIamge(Request $request, ImageUploadHandler $handler)
+    {
+
+        // 初始化返回数据，默认是失败的
+        $data = [
+            'success'   => false,
+            'msg'       => '上传失败!',
+            'url' => ''
+        ];
+
+        // 判断是否有上传文件，并赋值给 $file
+        if ($file = $request->image) {
+            // 保存图片到本地
+            $result = $handler->save($request->image, 'mdimages', 'md', 1024);
+            // 图片保存成功的话
+            if ($result) {
+                $data['image'] = $result['path'];
+                $data['msg']       = "上传成功!";
+                $data['success']   = true;
+            }
+        }
+        return $data;
+    }
 }

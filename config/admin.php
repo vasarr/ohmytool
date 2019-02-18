@@ -348,7 +348,9 @@ return [
             // Editor configuration
             'config' => [
                 'autofocus'   => true,
-//                'placeholder' => 'xxxx',
+                'spellChecker' => false,
+                'placeholder' => '请使用 Markdown 编写',
+                'upload' => '/ulgoqo/upload_image',
                 'showIcons' => [
                     'code', 'table','image','heading','horizontal-rule'
                 ],
