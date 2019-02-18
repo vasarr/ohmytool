@@ -19,6 +19,3 @@
  */
 
 Encore\Admin\Form::forget(['map', 'editor']);
-
-//Admin::css('/vendor/laravel-admin-ext/simditor/simditor-2.3.20/styles/simditor-markdown.css');
-//Admin::js('/vendor/laravel-admin-ext/simditor/simditor-2.3.20/scripts/simditor-markdown.js');
