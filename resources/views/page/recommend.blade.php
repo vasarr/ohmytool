@@ -78,8 +78,7 @@
                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
             }
         };
-
-
+        
         var simplemde = new SimpleMDE({
             element: document.getElementById("mde2"),
             spellChecker: false,
