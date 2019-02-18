@@ -35,16 +35,16 @@
                         <textarea class="form-control" name="description" rows="5" placeholder="简要描述"></textarea>
                     </div>
                 </div>
-                <div class="row input-round">
-                    <div class="col-md-12">
-                        <textarea id="mde" class="form-control" name="description" rows="5" placeholder="TESTMDE"></textarea>
-                    </div>
-                </div>
-                <div class="row input-round">
-                    <div class="col-md-12">
-                        <textarea id="mde2" class="form-control" name="description" rows="5" placeholder="TESTMDE22"></textarea>
-                    </div>
-                </div>
+                {{--<div class="row input-round">--}}
+                    {{--<div class="col-md-12">--}}
+                        {{--<textarea id="mde" class="form-control" name="description" rows="5" placeholder="TESTMDE"></textarea>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="row input-round">--}}
+                    {{--<div class="col-md-12">--}}
+                        {{--<textarea id="mde2" class="form-control" name="description" rows="5" placeholder="TESTMDE22"></textarea>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
                 <div class="row input-round">
                     <div class="col-md-12">
                         <div style="border-radius: 5px;background-color:#F8F8F9;border: 1px solid #D3E0E8;padding: 20px 0 20px 0;">
