@@ -2,6 +2,7 @@
 @section('title', isset($article->title) ? $article->title : '个人文章')
 
 @section('style')
+    <link href="https://cdn.bootcss.com/fluidbox/2.0.5/css/fluidbox.min.css" rel="stylesheet">
 <style>
     .markdown {
         margin-top: 25px;
@@ -25,6 +26,9 @@
         border: 1px solid #ddd;
         -webkit-box-shadow: 0 0 30px #ccc;
         box-shadow: 0 0 30px #ccc;
+    }
+    .markdown .fluidbox--closed {
+        cursor: zoom-in;
     }
 
 </style>
@@ -62,6 +66,8 @@
 @stop
 
 @section('script')
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+    <script src="https://cdn.bootcss.com/fluidbox/2.0.5/js/jquery.fluidbox.min.js"></script>
     <script>
         $('.markdown a[href^="http://"], .markdown a[href^="https://"]').each(function() {
             var a = new RegExp('/' + window.location.host + '/');
@@ -84,6 +90,11 @@
                     success: function(){}
                 });
             });
+
+            $(".markdown img").each(function () {
+                $(this).wrap("<a href="+this.src+"></a>");
+            });
+            $('.markdown a').fluidbox();
 
         })
     </script>
