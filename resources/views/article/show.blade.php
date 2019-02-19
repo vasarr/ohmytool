@@ -63,6 +63,17 @@
 
 @section('script')
     <script>
+        $('.markdown a[href^="http://"], .markdown a[href^="https://"]').each(function() {
+            var a = new RegExp('/' + window.location.host + '/');
+            if(!a.test(this.href) ) {
+                $(this).click(function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    window.open(this.href, '_blank');
+                });
+            }
+        });
+
         $(function () {
             $('.click').click(function () {
                 var id = $(this).attr('data-id');
