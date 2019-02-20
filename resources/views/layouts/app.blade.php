@@ -40,7 +40,7 @@
             width: 100%;
             /* Set the fixed height of the footer here */
             height: 220px;
-            background-color: #1B1C1C;
+            background-color: #222834;
             color: white;
         }
 
