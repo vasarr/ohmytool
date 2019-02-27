@@ -179,6 +179,13 @@
                 @endforeach
             </div>
         </div><!-- end推荐blog -->
+        <div class="vasar map" style="">
+            <div class="map-vistor">
+                <a href="https://clustrmaps.com/site/1am47"  title="Visit tracker">
+                    <img src="//www.clustrmaps.com/map_v2.png?w=400&t=n&d=frS9cDr8x9vKKdewumMzqeXhgAakkoVMB2XrUFv99Ac&cl=ffffff"/>
+                </a>
+            </div>
+        </div>
     </div>{{--right--}}
 @endsection
 
